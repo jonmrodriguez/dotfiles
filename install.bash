@@ -1,4 +1,4 @@
 #!/bin/bash
 
-cp .bash_profile .bashrc ~
+cp .vimrc .bash_profile .bashrc ~
 
