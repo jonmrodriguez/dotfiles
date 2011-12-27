@@ -94,20 +94,6 @@ alias ls='ls_categorized' # in /opt/local/bin/new_project_jon
 
 
 
-###
-# tput # wraps libcurses (as discovered via: 'tput -V')
-###
-
-tput2()
-{
- echo "in tput2"
-}
-
-
-
-
-
-
 
 ###
 # hardware
