@@ -7,9 +7,14 @@ set number " line numbers
 set autoindent " THANK GOD
 
 
+" Each indentation level is four spaces. Tabs are not used.
+" from http://tedlogan.com/techblog3.html
+set softtabstop=4 shiftwidth=4 expandtab
 
 
 
+" Press f5 to run the selected lines using python
+" TODO might need to set a remap for SELECT mode too
 
 " the first n in nnoremap means that this remap takes effect in normal mode
 " the ggVG visually selects all, and leaves the editor in visual mode
@@ -30,5 +35,19 @@ vnoremap <f5> :!python<CR>
 
 colorscheme ron
 
-set guifont=Monaco:h16
+set guifont=SimSun:h18
+" set guifont=Times:h14
 " set guifont=MS\ Reference\ Sans\ Serif:h16
+
+" set fu " launch in fullscreen mode
+
+
+set guioptions-=r " removes the right scrollbar
+
+
+" http://stackoverflow.com/a/2129738/402807
+if has("gui_macvim")
+    let macvim_hig_shift_movement = 1
+endif
+
+

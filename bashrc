@@ -2,9 +2,29 @@
 
 
 
-
+PROJECT_PATH='/Users/jon/Dropbox/git'
 alias whisper='echo >/dev/null'     #  hopefully self-explanatory
 
+
+
+###
+# Path
+###
+
+# add to path
+#  note that anything path_added from jon's bashrc
+#  won't be on the root path for sudo
+path_add()
+{
+PATH=$PATH:$1
+}
+
+
+# new_project puts soft links to new projects' commands here
+path_add /opt/local/bin/new_project_jon
+
+# TODO replace all the aliases with soft links
+# in /opt/local/bin/new_project_jon
 
 
 ###
@@ -12,12 +32,8 @@ alias whisper='echo >/dev/null'     #  hopefully self-explanatory
 ###
 
 # tput init  Apparently both not necessary and buggy (outputs !p to the screen). Fuck that shit.
-alias tput_color='~/Dropbox/git/tput/tput_color.py'
 
-
-
-
-
+# also, I made a python module in site-packages called tput.py
 
 
 ###
@@ -69,41 +85,12 @@ touch ~/.show_prompt_newline
 ###
 
 alias l='"ls"'
-# the grep command is grepping for lines that start with the letter d
-alias ls_apps='"ls" -l | grep "^d" | grep ".app$"'
-alias ls_dirs='"ls" -l | grep "^d" | grep -v ".app$"'
-alias ls_slinks='"ls" -l | grep "^l"'  # soft symlinks
-alias ls_files='"ls" -l | grep "^-"'   # non-dir, non-symlink files
-alias ls='
 
-echo;
-tput bold;
-echo "APPS"
-tput sgr0;
-ls_apps;
-echo ;
+alias lrecent='l -1ctr'
 
-tput bold;
-echo "DIRECTORIES"
-tput sgr0;
-ls_dirs;
-echo ;
+alias ll='"ls" -l'
 
-tput bold;
-echo "SOFT LINKS";
-tput sgr0;
-ls_slinks ;
-echo ;
-
-tput bold;
-echo "FILES";
-tput sgr0;
-ls_files;
-' # end ls alias
-
-# alias ls='~/Dropbox/git/ls/ls.py'
-
-
+alias ls='ls_categorized' # in /opt/local/bin/new_project_jon
 
 
 
@@ -127,12 +114,17 @@ tput2()
 # :-D
 ###
 
+# brightness
+# wifi
+# volume
+
+# TODO bluetooth
+# goal: be able to pipe sound between computers, providing play-sync from ANY program (just as a virtual speaker device)
 
 # note: brightness takes one arg: a float in [0.0, 1.0]
+# or brightness -l to list
 
-
-# I wrote this :)
-alias wifi_util='~/Dropbox/git/wifi_util' 
+# wifi help  (wifi is a soft link to wifi_util)
 
 
 
@@ -174,17 +166,17 @@ alias vim='mvim'
 
 
 # make "cd -" g o to the old place
-alias mempwd='~/Dropbox/git/mempwd/mempwd.py'
+alias mempwd='$PROJECT_PATH/mempwd/mempwd.py'
 
 cd2()
 {
 'cd' "$@"
 mempwd
-touch ~/Dropbox/git/lsd/wake_lsd.txt
+touch $PROJECT_PATH/lsd/wake_lsd.txt
 }
 alias cd='cd2'
 
-source ~/Dropbox/git/mempwd/set_OLDPWD.bash # sets OLDPWD
+source $PROJECT_PATH/mempwd/set_OLDPWD.bash # sets OLDPWD
 # now, cd - when you first open a window goes to the old place :)
 
 
@@ -262,8 +254,8 @@ alias app="open -a"
 
 # this is for an open source proj called j2
 
-export JPY=~/Dropbox/git/j2/j.py
-source ~/Dropbox/git/j2/j.sh
+export JPY=$PROJECT_PATH/j2/j.py
+source $PROJECT_PATH/j2/j.sh
 
 #
 
@@ -279,7 +271,7 @@ bind '"\e[B": history-search-forward'
 # lsd, the ls daemon
 # lsd is intended to run in a full-screen vertical pan
 # lsd prettily lsifies your files every time you cd somewhere
-. ~/Dropbox/git/lsd/init.py
+. $PROJECT_PATH/lsd/init.py
 
 # fink
 . /sw/bin/init.sh
@@ -300,7 +292,23 @@ export PATH=/opt/local/bin:/opt/local/sbin:$PATH
 
 
 
+# reverse the order of lines
+alias reverse='tail -r' 
+
+# not bothering to individually label
+source $PROJECT_PATH/new_project/init.bash
 
 
-# append here
+# experimental
+
+# created by new_project
+
+source /Users/jon/Dropbox/git/space_derivatives_of_nd_matrix/init.bash
+source /Users/jon/Dropbox/git/say_the_time/init.bash
+source /Users/jon/Dropbox/git/touchmod/init.bash
+source /Users/jon/Dropbox/git/bash_fn/init.bash
+source /Users/jon/Dropbox/git/tput/init.bash
+source /Users/jon/Dropbox/git/AWS/init.bash
+source /Users/jon/Dropbox/git/wifi_util/init.bash
+source /Users/jon/Dropbox/git/battery/init.bash
 
