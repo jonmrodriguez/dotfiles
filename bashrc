@@ -30,6 +30,12 @@ path_prepend()
 export PATH=$1:$PATH
 }
 
+# PKG_CONFIG_PATH for pkgconfig
+#
+# oblong g-speak
+export PKG_CONFIG_PATH=$PKG_CONFIG_PATH:/opt/oblong/g-speak-32-2/lib/pkgconfig
+#
+
 # new_project puts soft links to new projects' commands here
 path_append /opt/local/bin/new_project_jon
 
