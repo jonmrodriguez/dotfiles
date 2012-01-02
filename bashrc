@@ -30,7 +30,7 @@ path_prepend()
 export PATH=$1:$PATH
 }
 
-# PKG_CONFIG_PATH for pkgconfig
+# PKG_CONFIG_PATH for pkg-config
 #
 # oblong g-speak
 export PKG_CONFIG_PATH=$PKG_CONFIG_PATH:/opt/oblong/g-speak-32-2/lib/pkgconfig
