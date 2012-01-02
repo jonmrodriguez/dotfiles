@@ -30,9 +30,22 @@ path_prepend()
 export PATH=$1:$PATH
 }
 
-
 # new_project puts soft links to new projects' commands here
 path_append /opt/local/bin/new_project_jon
+
+# fink
+. /sw/bin/init.sh
+# TODO check PATH before and after to see how fink's init manipulates it
+
+# for MacPorts
+path_prepend /opt/local/bin:/opt/local/sbin
+# TODO also export MANPATH=/opt/local/share/man:$MANPATH
+#  (see http://stackoverflow.com/questions/1333569/how-does-macports-install-packages-how-can-i-activate-a-ruby-installation-done )
+
+
+
+
+
 
 # TODO replace all the aliases with soft links
 # in /opt/local/bin/new_project_jon
@@ -266,9 +279,6 @@ bind '"\e[B": history-search-forward'
 # lsd prettily lsifies your files every time you cd somewhere
 . $PROJECT_PATH/lsd/init.py
 
-# fink
-. /sw/bin/init.sh
-# TODO check PATH before and after to see how fink's init manipulates it
 
 # airport -z # disconnects from network
 # networksetup -getairportnetwork en0
@@ -276,13 +286,6 @@ bind '"\e[B": history-search-forward'
 alias airport='/System/Library/PrivateFrameworks/Apple80211.framework/Versions/Current/Resources/airport'
 
 
-
-
-
-# for MacPorts
-path_prepend /opt/local/bin:/opt/local/sbin
-# TODO also export MANPATH=/opt/local/share/man:$MANPATH
-#  (see http://stackoverflow.com/questions/1333569/how-does-macports-install-packages-how-can-i-activate-a-ruby-installation-done )
 
 
 
