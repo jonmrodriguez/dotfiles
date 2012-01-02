@@ -1,8 +1,9 @@
 #!/bin/bash
 
 
+# see here for why to use export: http://stackoverflow.com/questions/1158091/bash-defining-a-variable-with-or-without-export
 
-PROJECT_PATH='/Users/jon/Dropbox/git'
+export PROJECT_PATH='/Users/jon/Dropbox/git'
 alias whisper='echo >/dev/null'     #  hopefully self-explanatory
 
 
@@ -14,14 +15,24 @@ alias whisper='echo >/dev/null'     #  hopefully self-explanatory
 # add to path
 #  note that anything path_added from jon's bashrc
 #  won't be on the root path for sudo
-path_add()
+#   BUT there is an way to make it so it is available to sudo
+#    just use "sudo visudo" to edit /etc/sudoers,
+#    and in that file, add PATH, MAN_PATH, and whatever other
+#    compiler include paths and linker library paths I want
+#    to the Default called "env_keep".  :-D
+path_append()
 {
-PATH=$PATH:$1
+export PATH=$PATH:$1
+}
+
+path_prepend()
+{
+export PATH=$1:$PATH
 }
 
 
 # new_project puts soft links to new projects' commands here
-path_add /opt/local/bin/new_project_jon
+path_append /opt/local/bin/new_project_jon
 
 # TODO replace all the aliases with soft links
 # in /opt/local/bin/new_project_jon
@@ -125,12 +136,8 @@ alias scorn='ssh -X jonr1@corn.stanford.edu -t bash'
 alias sacer='ssh -X jonr1@jrodacer.stanford.edu -t bash'
 alias sseq='ssh -X jonr1@seq2.stanford.edu -t bash' # from here can ssh to tako
 
-
-
-
-
-
-
+export AWS_VERGENCE_0='ec2-50-16-100-213.compute-1.amazonaws.com'
+alias saws='ssh $AWS_VERGENCE_0'
 
 
 
@@ -273,10 +280,14 @@ alias airport='/System/Library/PrivateFrameworks/Apple80211.framework/Versions/C
 
 
 # for MacPorts
-export PATH=/opt/local/bin:/opt/local/sbin:$PATH
+path_prepend /opt/local/bin:/opt/local/sbin
+# TODO also export MANPATH=/opt/local/share/man:$MANPATH
+#  (see http://stackoverflow.com/questions/1333569/how-does-macports-install-packages-how-can-i-activate-a-ruby-installation-done )
 
 
 
+# append to HISTFILE instead of overwriting
+shopt -s histappend
 
 # reverse the order of lines
 alias reverse='tail -r' 

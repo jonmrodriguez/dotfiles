@@ -26,7 +26,10 @@ nnoremap <f5> ggVG:!python<CR>
 vnoremap <f5> :!python<CR>
 
 
-
+" from http://stackoverflow.com/a/235970/402807
+" highlight chars beyond column 80
+highlight OverLength ctermbg=red ctermfg=white guibg=#592929
+match OverLength /\%81v.\+/
 
 
 
