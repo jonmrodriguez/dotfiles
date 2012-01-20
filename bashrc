@@ -4,6 +4,7 @@
 # see here for why to use export: http://stackoverflow.com/questions/1158091/bash-defining-a-variable-with-or-without-export
 
 export PROJECT_PATH='/Users/jon/Dropbox/git'
+export DG="$PROJECT_PATH" # DG for Dropbox/git/
 alias whisper='echo >/dev/null'     #  hopefully self-explanatory
 
 
@@ -35,6 +36,8 @@ export PATH=$1:$PATH
 # oblong g-speak
 export PKG_CONFIG_PATH=$PKG_CONFIG_PATH:/opt/oblong/g-speak-32-2/lib/pkgconfig
 #
+# for opencv 2.3 ; see the README in that folder
+export PYTHONPATH=$PYTHONPATH:/Users/jon/Dropbox/git/Libraries/opencv_python_bindings
 
 # new_project puts soft links to new projects' commands here
 path_append /opt/local/bin/new_project_jon
@@ -43,12 +46,22 @@ path_append /opt/local/bin/new_project_jon
 . /sw/bin/init.sh
 # TODO check PATH before and after to see how fink's init manipulates it
 
-# for MacPorts
+# (2) for MacPorts
 path_prepend /opt/local/bin:/opt/local/sbin
 # TODO also export MANPATH=/opt/local/share/man:$MANPATH
 #  (see http://stackoverflow.com/questions/1333569/how-does-macports-install-packages-how-can-i-activate-a-ruby-installation-done )
 
 
+# (0)
+path_prepend /jon/bin
+
+# TODO path as follows
+# 0. /jon/bin
+# 1. /usr/bin
+# 2. /opt/bin # MacPorts
+# /Applications # with proper wrap to call the executable in the bundle
+# 4. /sw/bin
+# only for root_jon: /CoreServices # with proper wrap to call the executable in the bundle # root jon is equiv powerful as root, but with customizable bashrc and path
 
 
 
@@ -197,22 +210,6 @@ source $PROJECT_PATH/mempwd/set_OLDPWD.bash # sets OLDPWD
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 # less and top UXiness
 alias less='less -W'
 alias top='top -d'
@@ -234,8 +231,14 @@ alias app="open -a"
 
 
 
-
-
+# find
+#
+# -L means follow soft links, which is needed in order to get deeper than /places_to_find
+# the 2> is stderr redirection
+find_by_name()
+{
+find -L /places_to_find -name "$@" 2>/dev/null
+}
 
 
 
@@ -292,7 +295,8 @@ bind '"\e[B": history-search-forward'
 alias airport='/System/Library/PrivateFrameworks/Apple80211.framework/Versions/Current/Resources/airport'
 
 
-
+# screenshots: viewing and TODO creating
+alias see_screenshots='open ~/Dropbox/screenshots'
 
 
 # append to HISTFILE instead of overwriting
@@ -301,20 +305,26 @@ shopt -s histappend
 # reverse the order of lines
 alias reverse='tail -r' 
 
-# not bothering to individually label
-source $PROJECT_PATH/new_project/init.bash
+
+#### experimental
+
+# the sourcing is the outer half of a kludged protocol to let
+# new_project.py export env vars via stderr
+# =D
+alias new_project='source wrap_new_project'
 
 
-# experimental
+# looked for .sb sandbox environments in the gitted directory /jon/share/sandbox
+alias jail_me='sandbox-exec -n jail2 bash --norc'
 
-# created by new_project
+
+#### created by new_project
 
 source /Users/jon/Dropbox/git/space_derivatives_of_nd_matrix/init.bash
-source /Users/jon/Dropbox/git/say_the_time/init.bash
-source /Users/jon/Dropbox/git/touchmod/init.bash
-source /Users/jon/Dropbox/git/bash_fn/init.bash
 source /Users/jon/Dropbox/git/tput/init.bash
 source /Users/jon/Dropbox/git/AWS/init.bash
 source /Users/jon/Dropbox/git/wifi_util/init.bash
 source /Users/jon/Dropbox/git/battery/init.bash
 
+alias p=python
+cd ~/gitolite/cv/ar/
