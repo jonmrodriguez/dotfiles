@@ -33,24 +33,5 @@ match OverLength /\%81v.\+/
 
 
 
-"   MVIM-specific codez
-
-
-colorscheme darkblue
-
-set guifont=SimSun:h18
-" set guifont=Times:h14
-" set guifont=MS\ Reference\ Sans\ Serif:h16
-
-" set fu " launch in fullscreen mode
-
-
-set guioptions-=r " removes the right scrollbar
-
-
-" http://stackoverflow.com/a/2129738/402807
-if has("gui_macvim")
-    let macvim_hig_shift_movement = 1
-endif
 
 
