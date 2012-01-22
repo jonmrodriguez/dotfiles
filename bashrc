@@ -320,9 +320,6 @@ alias jail_me='sandbox-exec -n jail2 bash --norc'
 
 #### created by new_project
 
-source /Users/jon/Dropbox/git/space_derivatives_of_nd_matrix/init.bash
-source /Users/jon/Dropbox/git/tput/init.bash
-source /Users/jon/Dropbox/git/AWS/init.bash
 source /Users/jon/Dropbox/git/wifi_util/init.bash
 source /Users/jon/Dropbox/git/battery/init.bash
 
