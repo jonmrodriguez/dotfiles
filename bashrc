@@ -5,6 +5,8 @@
 
 export PROJECT_PATH='/Users/jon/Dropbox/git'
 export DG="$PROJECT_PATH" # DG for Dropbox/git/
+
+
 alias whisper='echo >/dev/null'     #  hopefully self-explanatory
 
 
