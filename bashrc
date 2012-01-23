@@ -159,19 +159,31 @@ alias ls='ls_categorized' # in /opt/local/bin/new_project_jon
 
 
 
+###
+# ssh
+###
 
+# makes it so sshpass now provides the stanford password
+export SSH_ASKPASS=~/.ssh/jonr1_stanford_password.bash
+# so now, use sshpass to wrap any ssh to a stanford domain
 
 # aliases for ssh'ing places
 # always uses -X
-#
+
+# non-stanford
 alias sair='ssh -X jon@jrodair.stanford.edu -t bash'
-alias smyth='ssh -X jonr1@myth.stanford.edu -t bash'
-alias scorn='ssh -X jonr1@corn.stanford.edu -t bash'
 alias sacer='ssh -X jonr1@jrodacer.stanford.edu -t bash'
-alias sseq='ssh -X jonr1@seq2.stanford.edu -t bash' # from here can ssh to tako
+
+# yes-stanford. all wrapped with sshpass (which is a macport)
+alias smyth='sshpass ssh -X jonr1@myth.stanford.edu -t bash'
+alias scorn='sshpass ssh -X jonr1@corn.stanford.edu -t bash'
+alias sseq='sshpass ssh -X jonr1@seq2.stanford.edu -t bash' # from here can ssh to tako
 
 export AWS_VERGENCE_0='ec2-50-16-100-213.compute-1.amazonaws.com'
-alias saws='ssh $AWS_VERGENCE_0'
+alias saws="ssh $AWS_VERGENCE_0" # double quote means eval the $ now
+
+alias smith="echo $STANFORD_PASSWORD | ssh -S -X jonr1@myth.stanford.edu -t bash"
+export STANFORD_PASSWORD='loldog' # but it's still visible in the alias
 
 
 
@@ -314,6 +326,10 @@ alias reverse='tail -r'
 # new_project.py export env vars via stderr
 # =D
 alias new_project='source wrap_new_project'
+
+# similarly, stealth_mode needs to be sourced
+# so it can export HISTIGNORE='*'
+alias stealth_mode='source wrap_stealth_mode'
 
 
 # looked for .sb sandbox environments in the gitted directory /jon/share/sandbox
