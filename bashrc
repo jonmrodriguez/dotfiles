@@ -182,9 +182,6 @@ alias sseq='sshpass ssh -X jonr1@seq2.stanford.edu -t bash' # from here can ssh 
 export AWS_VERGENCE_0='ec2-50-16-100-213.compute-1.amazonaws.com'
 alias saws="ssh $AWS_VERGENCE_0" # double quote means eval the $ now
 
-alias smith="echo $STANFORD_PASSWORD | ssh -S -X jonr1@myth.stanford.edu -t bash"
-export STANFORD_PASSWORD='loldog' # but it's still visible in the alias
-
 
 
 
