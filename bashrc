@@ -41,7 +41,10 @@ export PKG_CONFIG_PATH=$PKG_CONFIG_PATH:/opt/oblong/g-speak-32-2/lib/pkgconfig
 # for opencv 2.3 ; see the README in that folder
 export PYTHONPATH=$PYTHONPATH:/Users/jon/Dropbox/git/Libraries/opencv_python_bindings
 
-# new_project puts soft links to new projects' commands here
+# version 2.0 of new_project puts new soft links here
+path_prepend /jon/bin/new_project
+# version 1.0 of new_project used to put new soft links here
+# some links are still in that folder
 path_append /opt/local/bin/new_project_jon
 
 # fink
@@ -57,6 +60,8 @@ path_prepend /opt/local/bin:/opt/local/sbin
 # (0)
 path_prepend /jon/bin
 
+# TODO where do the new_project items fall in the following?
+# TODO just echo $PATH and put that shit here brah
 # TODO path as follows
 # 0. /jon/bin
 # 1. /usr/bin
@@ -198,8 +203,10 @@ alias vim='mvim'
 
 
 
-
-
+#
+# TODO source a script that sets $default_dir to a value settable using a command "default_dir"
+export default_dir='/Users/jon/gitolite/cv/ar/'
+cd $default_dir
 
 # make "cd -" g o to the old place
 alias mempwd='$PROJECT_PATH/mempwd/mempwd.py'
@@ -339,4 +346,4 @@ source /Users/jon/Dropbox/git/wifi_util/init.bash
 source /Users/jon/Dropbox/git/battery/init.bash
 
 alias p=python
-cd ~/gitolite/cv/ar/
+
