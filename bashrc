@@ -204,8 +204,7 @@ alias vim='mvim'
 
 
 #
-# TODO source a script that sets $default_dir to a value settable using a command "default_dir"
-export default_dir='/Users/jon/gitolite/cv/ar/'
+export default_dir=$(bookmark --recentest)
 cd $default_dir
 
 # make "cd -" g o to the old place
@@ -325,6 +324,10 @@ alias reverse='tail -r'
 
 
 #### experimental
+
+# carry over the cd $there concept from new_project to other commands that make places
+# note working yet (just make a python script): alias mkdir='save_param=$1 ; mkdir $save_param; echo $save_param; abspath $save_param > /Users/jon/sandbox/mkdir_there.txt ; export there=$(cat /Users/jon/sandbox/mkdir_there.txt)' # the hop through a temporary file is because bash doesn't seem to nest $ signs, so I cant just export there=$(abspath $1)
+alias slowcat='slowcat -d 500000' # bigger number is slow. seems like max is around 500000, after which it's instant
 
 # the sourcing is the outer half of a kludged protocol to let
 # new_project.py export env vars via stderr
