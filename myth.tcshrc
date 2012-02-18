@@ -1,0 +1,12 @@
+
+# have tcsh just immediately switch to bash
+
+# if I were really cool I would exec bash using this process number
+# so that the SHLVL doesn't increase (from 1 to 2 I believe)
+
+bash
+
+# ok, I tried doing exec bash, but for some reason SHLVL still increases. a tcsh bug?
+
+exit
+
