@@ -3,5 +3,5 @@
 
 source ~/.bashrc
 
-# The Macports PATH addition is my .bashrc
+# The Macports PATH addition is in my .bashrc
 
