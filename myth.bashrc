@@ -32,6 +32,22 @@ alias sseq='ssh -X jonr1@seq2.stanford.edu -t bash' # from here can ssh to tako
 alias l='ls'
 
 
+
+
+
+
+
+# path
+export PATH=$PATH:/afs/ir/users/j/o/jonr1/Documents/git/bin
+
+
+
+
+
+
+
+
 # the latest place I am working
 cd ~
 cd 'Desktop/cs110 2 threads'
+
