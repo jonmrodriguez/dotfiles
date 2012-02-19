@@ -94,7 +94,7 @@ path_prepend /jon/bin
 
 # begin prompt
 
-PS1='\[$(
+export PS1='\[$(
 
 whisper "everything before the clear gets into the transcript only";
 
@@ -109,7 +109,8 @@ tput setaf $(grep -o "/" <(pwd) | wc -w);
 )\]'"$newline_string_for_prompt"'\u @ \h : \w\n\[$( tput sgr0 )\]$ '
 
 rm -f ~/.show_prompt_newline
-PROMPT_COMMAND='
+
+export PROMPT_COMMAND='
 if [ -a ~/.show_prompt_newline ]
 then
 echo
