@@ -80,6 +80,13 @@ path_prepend /jon/bin
 
 
 ###
+# Editors
+###
+
+export VISUAL='vim'
+
+
+###
 # Prompt
 ###
 
