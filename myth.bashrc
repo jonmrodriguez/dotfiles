@@ -29,7 +29,8 @@ alias sseq='ssh -X jonr1@seq2.stanford.edu -t bash' # from here can ssh to tako
 # actually dont do this because gvim doesnt work inside of gnu screen.
 # alias vim=gvim # because gvim is MacVim. Need to be forwarding X11.
 
-alias l='ls'
+alias ls='ls_categorized'
+alias l="'ls'"
 
 
 
