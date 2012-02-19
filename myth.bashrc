@@ -38,7 +38,8 @@ alias l='ls'
 
 
 # path
-export PATH=$PATH:/afs/ir/users/j/o/jonr1/Documents/git/bin
+export DG='/afs/ir/users/j/o/jonr1/Documents/git/'
+export PATH=$PATH:$DG/bin
 
 
 
