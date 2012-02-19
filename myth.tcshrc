@@ -8,5 +8,6 @@ bash
 
 # ok, I tried doing exec bash, but for some reason SHLVL still increases. a tcsh bug?
 
+# todo why isn't exit working?
 exit
 
