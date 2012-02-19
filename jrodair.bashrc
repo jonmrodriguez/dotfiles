@@ -84,6 +84,7 @@ path_prepend /jon/bin
 ###
 
 export VISUAL='vim'
+export cow='536476'
 
 
 ###
