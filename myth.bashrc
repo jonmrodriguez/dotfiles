@@ -34,6 +34,9 @@ alias l='ls'
 
 
 
+# editors
+export VISUAL='vim'
+
 
 
 
