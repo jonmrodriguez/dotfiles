@@ -50,7 +50,9 @@ export PATH=$PATH:$DG/bin
 
 
 
-
+# less
+# although less works fine on corn, less on myth crashes, so just use less=more on both
+alias less='more'
 
 
 

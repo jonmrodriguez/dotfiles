@@ -207,7 +207,16 @@ alias saws="ssh $AWS_VERGENCE_0" # double quote means eval the $ now
 ###
 
 alias legacy_vim='"vim"'
-alias vim='mvim'
+
+# without this if statement,
+# using vim while logged in will open mvim as a mac program!
+if [ $TERM_PROGRAM == 'iTerm.app' ]
+then
+    # if actually on the mac air hardware
+    alias vim='mvim'
+else
+    alias vim='legacy_vim'
+fi
 
 
 
