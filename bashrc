@@ -210,9 +210,9 @@ alias legacy_vim='"vim"'
 
 # without this if statement,
 # using vim while logged in will open mvim as a mac program!
-if [ $TERM_PROGRAM == 'iTerm.app' ]
+if [ $TERM_PROGRAM ]
 then
-    # if actually on the mac air hardware
+    # iTerm sets TERM_PROGRAM to 'iTerm.app', while ssh leaves it unset.
     alias vim='mvim'
 else
     alias vim='legacy_vim'
