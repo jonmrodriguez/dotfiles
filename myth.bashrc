@@ -43,6 +43,12 @@ export VISUAL='vim'
 
 
 
+# readline
+# allow using up and down arrows to search history
+bind '"\e[A": history-search-backward'
+bind '"\e[B": history-search-forward'
+
+
 
 # path
 export DG='/afs/ir/users/j/o/jonr1/Documents/git/'

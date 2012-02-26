@@ -228,7 +228,7 @@ fi
 export default_dir=$(bookmark --recentest)
 cd $default_dir
 
-# make "cd -" g o to the old place
+# make "cd -" go to the old place
 alias mempwd='$PROJECT_PATH/mempwd/mempwd.py'
 
 cd2()
