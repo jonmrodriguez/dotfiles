@@ -184,7 +184,11 @@ export SSH_ASKPASS=~/.ssh/jonr1_stanford_password.bash
 # always uses -X
 
 # non-stanford
-alias sair='ssh -X jon@jrodair.stanford.edu -t bash'
+
+# for some reason the jrodair hostname lookup often fails
+# alias sair='ssh -X jon@jrodair.stanford.edu -t bash'
+alias sair='ssh -X jon@128.12.10.42 -t bash'
+
 alias sacer='ssh -X jonr1@jrodacer.stanford.edu -t bash'
 
 # yes-stanford. all wrapped with sshpass (which is a macport)

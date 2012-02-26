@@ -12,7 +12,10 @@ PS1='\n\n\[$( tput bold ; tput setaf '$prompt_color' )\]\u @ \h : \w\n$\[$( tput
 # aliases for ssh'ing places
 # always uses -X
 
-alias sair='ssh -X jon@jrodair.stanford.edu -t bash'
+# for some reason the jrodair hostname lookup often fails
+# alias sair='ssh -X jon@jrodair.stanford.edu -t bash'
+alias sair='ssh -X jon@128.12.10.42 -t bash'
+
 alias sacer='ssh -X jonr1@jrodacer.stanford.edu -t bash'
 
 # no need to wrap with sshpass bc we are already within stanford's walls
