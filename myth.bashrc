@@ -63,6 +63,38 @@ alias less='more'
 
 
 
+###
+### Prompt
+###
+
+# begin prompt
+
+export PS1='\[$(
+
+
+tput bold;
+
+
+tput setaf $(grep -o "/" <(pwd) | wc -w);
+
+
+)\]'"$newline_string_for_prompt"'\u @ \h : \w\n\[$( tput sgr0 )\]$ '
+
+rm -f ~/.show_prompt_newline
+
+export PROMPT_COMMAND='
+if [ -a ~/.show_prompt_newline ]
+then
+echo
+echo
+fi
+touch ~/.show_prompt_newline
+'
+# end prompt
+
+
+
+
 # the latest place I am working
 cd ~
 cd 'Desktop/cs110 3 optimize/code'
