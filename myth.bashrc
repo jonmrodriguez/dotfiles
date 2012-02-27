@@ -65,5 +65,5 @@ alias less='more'
 
 # the latest place I am working
 cd ~
-cd 'Desktop/cs110 3 optimize'
+cd 'Desktop/cs110 3 optimize/code'
 
