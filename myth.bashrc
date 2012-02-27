@@ -69,13 +69,21 @@ alias less='more'
 
 # begin prompt
 
+# the -4 on the slash count is to compensate for the fact that
+# ~ is at depth 6 on afs, but depth 2 on jrodair
 export PS1='\[$(
 
 
 tput bold;
 
+PS1_internal_count=$[ $(grep -o "/" <(pwd) | wc -w) - 4 ];
 
-tput setaf $(grep -o "/" <(pwd) | wc -w);
+if [ $PS1_internal_count -lt 1 ]
+then
+PS1_internal_count=1
+fi
+
+tput setaf $PS1_internal_count;
 
 
 )\]'"$newline_string_for_prompt"'\u @ \h : \w\n\[$( tput sgr0 )\]$ '
