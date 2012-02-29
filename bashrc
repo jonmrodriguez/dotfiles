@@ -348,12 +348,17 @@ alias reverse='tail -r'
 
 # carry over the cd $there concept from new_project to other commands that make places
 # note working yet (just make a python script): alias mkdir='save_param=$1 ; mkdir $save_param; echo $save_param; abspath $save_param > /Users/jon/sandbox/mkdir_there.txt ; export there=$(cat /Users/jon/sandbox/mkdir_there.txt)' # the hop through a temporary file is because bash doesn't seem to nest $ signs, so I cant just export there=$(abspath $1)
-alias slowcat='slowcat -d 500000' # bigger number is slow. seems like max is around 500000, after which it's instant
+alias slowcat='slowcat -d 500000' # bigger number means slower. seems like max is around 500000, after which it's instant
 
 # the sourcing is the outer half of a kludged protocol to let
 # new_project.py export env vars via stderr
 # =D
 alias new_project='source wrap_new_project'
+
+cd_project()
+{
+cd $(dirname $(readlink $(which $1)))
+}
 
 # similarly, stealth_mode needs to be sourced
 # so it can export HISTIGNORE='*'
