@@ -107,3 +107,14 @@ touch ~/.show_prompt_newline
 cd ~
 cd 'Desktop/cs110 3 optimize/code'
 
+
+
+# no harm in deffing this macro on all unix systems, even if I'll only use it on Darwin
+# in the future, I can have a more intelligence spotify.py that uses the correct way to
+# control spotify on both darwin and linux
+spotify()
+{
+osascript -e "tell application \"Spotify\" to $*"
+}
+
+
