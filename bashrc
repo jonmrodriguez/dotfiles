@@ -374,5 +374,11 @@ alias jail_me='sandbox-exec -n jail2 bash --norc'
 source /Users/jon/Dropbox/git/wifi_util/init.bash
 source /Users/jon/Dropbox/git/battery/init.bash
 
+
+# python
 alias p=python
+
+# extended globbing
+# see linuxjournal.com/content/bash-extended-globbing
+shopt -s extglob
 

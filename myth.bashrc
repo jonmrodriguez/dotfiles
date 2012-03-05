@@ -118,3 +118,9 @@ osascript -e "tell application \"Spotify\" to $*"
 }
 
 
+
+
+# extended globbing
+# see linuxjournal.com/content/bash-extended-globbing
+shopt -s extglob
+
