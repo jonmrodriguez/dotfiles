@@ -71,7 +71,10 @@ alias less='more'
 
 # the -4 on the slash count is to compensate for the fact that
 # ~ is at depth 6 on afs, but depth 2 on jrodair
-export PS1='\[$(
+export PS1='\n\n'
+
+export PS1=$PS1\
+'\[$(
 
 
 tput bold;
@@ -86,18 +89,36 @@ fi
 tput setaf $PS1_internal_count;
 
 
-)\]'"$newline_string_for_prompt"'\u @ \h : \w\n\[$( tput sgr0 )\]$ '
+)\]'
 
-rm -f ~/.show_prompt_newline
 
-export PROMPT_COMMAND='
-if [ -a ~/.show_prompt_newline ]
-then
-echo
-echo
-fi
-touch ~/.show_prompt_newline
-'
+export PS1=$PS1\
+'\u @ \h : \w\n\[$(
+
+
+tput sgr0;
+
+find . -maxdepth 1 -type d | tail -n +2 | tr "\n" " ";
+
+
+)\]'
+
+export PS1=$PS1\
+'\n'
+
+export PS1=$PS1\
+'\[$(
+
+tput bold;
+tput setaf 2;
+echo "\$";
+tput sgr0;
+
+
+)\]'
+
+# \$ ' # string literal
+
 # end prompt
 
 
