@@ -52,6 +52,7 @@ bind '"\e[B": history-search-forward'
 
 # path
 export DG='/afs/ir/users/j/o/jonr1/Documents/git/'
+export PY_LIBS_DIR='/afs/ir/users/j/o/jonr1/Documents/git/py_libs'
 export PATH=$PATH:$DG/bin
 
 
@@ -118,6 +119,9 @@ tput sgr0;
 )\]'
 
 # \$ ' # string literal
+
+
+# TODO this as only prompt.bash code: export PS1='$(prompt.py)'
 
 # end prompt
 
