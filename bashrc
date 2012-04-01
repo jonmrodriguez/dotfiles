@@ -104,36 +104,7 @@ alias lvl='echo $SHLVL'
 # Prompt
 ###
 
-
-
-# begin prompt
-
-export PS1='\[$(
-
-whisper "everything before the clear gets into the transcript only";
-
-tput bold;
-
-
-tput setaf $(grep -o "/" <(pwd) | wc -w);
-
-
-
-
-)\]'"$newline_string_for_prompt"'\u @ \h : \w\n\[$( tput sgr0 )\]$ '
-
-rm -f ~/.show_prompt_newline
-
-export PROMPT_COMMAND='
-if [ -a ~/.show_prompt_newline ]
-then
-echo
-echo
-fi
-touch ~/.show_prompt_newline
-'
-# end prompt
-
+export PS1="$(prompt.py)"
 
 
 
