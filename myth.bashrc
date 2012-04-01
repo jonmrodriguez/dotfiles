@@ -51,7 +51,8 @@ alias less='more'
 ### Prompt
 ###
 
-export PS1='$(prompt.py)'
+export PS1=""
+export PROMPT_COMMAND="prompt.py"
 
 # end prompt
 
