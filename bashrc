@@ -5,9 +5,11 @@
 
 export PROJECT_PATH='/Users/jon/Dropbox/git'
 export DG="$PROJECT_PATH" # DG for Dropbox/git/
-export HOSTNAME=$(hostname) # not part of the default exported environ on jrodair
 export PY_LIBS_DIR=$DG/py_libs
 
+# already set but not part of the default exported environ on jrodair
+export HOSTNAME
+export OSTYPE
 
 
 
