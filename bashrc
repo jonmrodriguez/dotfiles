@@ -105,9 +105,8 @@ alias lvl='echo $SHLVL'
 # Prompt
 ###
 
-export PS1=<<'END_HEREDOC'
+export PS1=<<END_HEREDOC
 $(prompt.py)
-$(j --add "$(pwd -P)")
 END_HEREDOC
 
 
