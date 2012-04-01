@@ -145,6 +145,15 @@ osascript -e "tell application \"Spotify\" to $*"
 
 
 
+###
+# lvl
+###
+alias lvl='echo $SHLVL'
+
+
+
+
+
 # extended globbing
 # see linuxjournal.com/content/bash-extended-globbing
 shopt -s extglob

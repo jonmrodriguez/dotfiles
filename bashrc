@@ -94,6 +94,13 @@ export VISUAL='vim'
 
 
 ###
+# lvl
+###
+alias lvl='echo $SHLVL'
+
+
+
+###
 # Prompt
 ###
 
