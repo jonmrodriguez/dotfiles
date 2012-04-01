@@ -332,7 +332,7 @@ alias airport='/System/Library/PrivateFrameworks/Apple80211.framework/Versions/C
 
 
 # screenshots: viewing and TODO creating
-alias see_screenshots='open ~/Dropbox/screenshots'
+alias screenshots='open ~/Dropbox/screenshots'
 
 
 # append to HISTFILE instead of overwriting
