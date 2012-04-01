@@ -130,7 +130,7 @@ tput sgr0;
 
 # the latest place I am working
 cd ~
-cd 'Desktop/cs110_4_webserver/code'
+cd 'Desktop/cs110_2_threads/code'
 
 
 
