@@ -5,15 +5,16 @@
 
 export PROJECT_PATH='/Users/jon/Dropbox/git'
 export DG="$PROJECT_PATH" # DG for Dropbox/git/
+export HOSTNAME=$(hostname) # not part of the default exported environ on jrodair
+export PY_LIBS_DIR=$DG/py_libs
 
-
-alias whisper='echo >/dev/null'     #  hopefully self-explanatory
 
 
 
 ###
 # Path
 ###
+
 
 # add to path
 #  note that anything path_added from jon's bashrc
@@ -104,7 +105,10 @@ alias lvl='echo $SHLVL'
 # Prompt
 ###
 
-export PS1="$(prompt.py)"
+export PS1=<<'END_HEREDOC'
+$(prompt.py)
+$(j --add "$(pwd -P)")
+END_HEREDOC
 
 
 
