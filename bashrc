@@ -209,16 +209,6 @@ alias saws="ssh $AWS_VERGENCE_0" # double quote means eval the $ now
 
 
 
-###
-# mvim and vim
-###
-
-alias legacy_vim='"vim"'
-alias vim='legacy_vim'
-# alias vim='mvim'
-
-
-
 
 
 
