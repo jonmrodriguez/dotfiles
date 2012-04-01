@@ -68,60 +68,7 @@ alias less='more'
 ### Prompt
 ###
 
-# begin prompt
-
-# the -4 on the slash count is to compensate for the fact that
-# ~ is at depth 6 on afs, but depth 2 on jrodair
-export PS1='\n\n'
-
-export PS1=$PS1\
-'\[$(
-
-
-tput bold;
-
-PS1_internal_count=$[ $(grep -o "/" <(pwd) | wc -w) - 4 ];
-
-if [ $PS1_internal_count -lt 1 ]
-then
-PS1_internal_count=1
-fi
-
-tput setaf $PS1_internal_count;
-
-
-)\]'
-
-
-export PS1=$PS1\
-'\u @ \h : \w\n\[$(
-
-
-tput sgr0;
-
-find . -maxdepth 1 -type d | tail -n +2 | tr "\n" " ";
-
-
-)\]'
-
-export PS1=$PS1\
-'\n'
-
-export PS1=$PS1\
-'\[$(
-
-tput bold;
-tput setaf 2;
-echo "\$";
-tput sgr0;
-
-
-)\]'
-
-# \$ ' # string literal
-
-
-# TODO this as only prompt.bash code: export PS1='$(prompt.py)'
+export PS1='$(prompt.py)'
 
 # end prompt
 
