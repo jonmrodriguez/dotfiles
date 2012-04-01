@@ -179,36 +179,6 @@ alias ls='ls_categorized' # in /opt/local/bin/new_project_jon
 
 
 
-###
-# ssh
-###
-
-# makes it so sshpass now provides the stanford password
-export SSH_ASKPASS=~/.ssh/jonr1_stanford_password.bash
-# so now, use sshpass to wrap any ssh to a stanford domain
-
-# aliases for ssh'ing places
-# always uses -X
-
-# non-stanford
-
-# for some reason the jrodair hostname lookup often fails
-# alias sair='ssh -X jon@jrodair.stanford.edu -t bash'
-alias sair='ssh -X jon@128.12.10.42 -t bash'
-
-alias sacer='ssh -X jonr1@jrodacer.stanford.edu -t bash'
-
-# yes-stanford. all wrapped with sshpass (which is a macport)
-alias smyth='sshpass ssh -X jonr1@myth.stanford.edu -t bash'
-alias scorn='sshpass ssh -X jonr1@corn.stanford.edu -t bash'
-alias sseq='sshpass ssh -X jonr1@seq2.stanford.edu -t bash' # from here can ssh to tako
-
-export AWS_VERGENCE_0='ec2-50-16-100-213.compute-1.amazonaws.com'
-alias saws="ssh $AWS_VERGENCE_0" # double quote means eval the $ now
-
-
-
-
 
 
 
