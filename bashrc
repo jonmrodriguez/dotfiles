@@ -105,7 +105,8 @@ alias lvl='echo $SHLVL'
 # Prompt
 ###
 
-export PS1="$(prompt.py)"
+export PS1=""
+export PROMPT_COMMAND="prompt.py"
 
 
 
