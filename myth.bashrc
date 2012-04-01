@@ -158,3 +158,19 @@ alias lvl='echo $SHLVL'
 # see linuxjournal.com/content/bash-extended-globbing
 shopt -s extglob
 
+
+
+
+
+###
+# projects
+###
+
+# TODO new_project
+
+cd_project()
+{
+cd $(dirname $(readlink $(which $1)))
+}
+
+
