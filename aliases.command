@@ -20,3 +20,13 @@ alias dotfiles="cd $DG/dotfiles"
 
 alias lvl='echo $SHLVL'
 
+
+#
+## git aliases start with capital G
+#
+
+G_commit_am_push()
+{
+git commit -am "$1" && git push
+}
+
