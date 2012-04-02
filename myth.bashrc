@@ -54,6 +54,11 @@ alias less='more'
 export PS1=""
 export PROMPT_COMMAND="prompt.py"
 
+# prompt.py needs these exported
+# they are exported by default on linux but not on darwin
+export HOSTNAME
+export OSTYPE
+
 # end prompt
 
 
@@ -77,9 +82,9 @@ osascript -e "tell application \"Spotify\" to $*"
 
 
 ###
-# lvl
+# aliases. the aliases.command file is intended to be edited freqly and whimsically
 ###
-alias lvl='echo $SHLVL'
+source $DG/dotfiles/aliases.command
 
 
 

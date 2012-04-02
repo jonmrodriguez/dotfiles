@@ -13,3 +13,10 @@
 alias dg="cd $DG"
 alias dotfiles="cd $DG/dotfiles"
 
+
+#
+## Recursion of shells
+#
+
+alias lvl='echo $SHLVL'
+
