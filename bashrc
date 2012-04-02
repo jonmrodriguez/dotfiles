@@ -157,28 +157,6 @@ alias ls='ls_categorized' # in /opt/local/bin/new_project_jon
 
 
 
-#
-export default_dir=$(bookmark --recentest)
-cd $default_dir
-
-# make "cd -" go to the old place
-alias mempwd='$PROJECT_PATH/mempwd/mempwd.py'
-
-cd2()
-{
-'cd' "$@"
-mempwd
-touch $PROJECT_PATH/lsd/wake_lsd.txt
-}
-alias cd='cd2'
-
-source $PROJECT_PATH/mempwd/set_OLDPWD.bash # sets OLDPWD
-# now, cd - when you first open a window goes to the old place :)
-
-
-
-
-
 
 
 
