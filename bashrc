@@ -181,20 +181,8 @@ source $PROJECT_PATH/mempwd/set_OLDPWD.bash # sets OLDPWD
 
 
 
-# less and top UXiness
-alias less='less -W'
-alias top='top -d'
 
-# swap the convention:
-# now, by default, less lesses a command's output
-# to less a file, use "less cat"
-# currently broken, don't know why
-# function less {
-# 'less' <($1) # quotes say to use the original less
-# }
-
-# for mac:
-alias app="open -a"
+source $DG/dotfiles/aliases.command
 
 
 
