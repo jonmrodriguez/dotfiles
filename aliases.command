@@ -15,6 +15,13 @@ alias dotfiles="cd $DG/dotfiles"
 
 
 #
+## Memory management
+#
+
+alias mpurge='mem_usage && purge && mem_usage'
+
+
+#
 ## Recursion of shells
 #
 
