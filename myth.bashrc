@@ -65,8 +65,6 @@ export OSTYPE
 
 
 # the latest place I am working
-cd ~
-cd 'Desktop/cs110_2_threads/code'
 
 
 

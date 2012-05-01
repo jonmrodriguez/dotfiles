@@ -13,6 +13,7 @@
 alias dg="cd $DG"
 alias dotfiles="cd $DG/dotfiles"
 
+alias chill='clear ; echo Chillin ; read'
 
 #
 ## Memory management
